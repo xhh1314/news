@@ -11,4 +11,8 @@ import org.example.news.base.common.entity.BaseEntity;
  */
 public class SnsForum extends BaseEntity{
 
+    private Long forumId;
+    private String name;
+    private String describle;
+
 }

@@ -10,4 +10,13 @@ import org.example.news.base.common.entity.BaseEntity;
  */
 public class SnsSubject extends BaseEntity{
 
+    private Long subjectId;
+    private Long forumId;
+    private String content;
+    private Long userId;
+    private Integer numberOfComment;
+    private Integer numOfLikes;
+
+
+
 }

@@ -18,6 +18,8 @@
         <module>news-base</module>
         <module>news-framework</module>
         <module>news-sns</module>
+        <module>news-ucenter</module>
+        <module>news-app</module>
     </modules>
 
     <parent>

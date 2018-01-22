@@ -9,4 +9,11 @@ import org.example.news.base.common.entity.BaseEntity;
  *@since
  */
 public class SnsComment extends BaseEntity {
+
+    private Long commentId;
+    private Long parentId;
+    private String content;
+    private Integer numberOfComent;
+    private Integer numberOfLikes;
+
 }
