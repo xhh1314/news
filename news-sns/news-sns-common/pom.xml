@@ -16,6 +16,11 @@
             <artifactId>news-base-common</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.example.news.framework</groupId>
+            <artifactId>news-framework-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
 

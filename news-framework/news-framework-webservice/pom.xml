@@ -6,12 +6,19 @@
         <artifactId>news-framework</artifactId>
         <groupId>org.example.news.framework</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../news-framework/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>news-framework-webservice</artifactId>
     <packaging>jar</packaging>
-
+    <name>news-framework-webservice</name>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mysql.connector.version>5.1.31</mysql.connector.version>
+        <!-- <druid.version>1.0.25</druid.version> -->
+        <druid.version>1.1.6</druid.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -33,7 +40,29 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+        <!-- 支持 @ConfigurationProperties 注解 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connector.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
     </dependencies>
+
 
 
 </project>

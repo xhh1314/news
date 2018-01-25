@@ -16,6 +16,7 @@
     <modules>
         <module>news-base-common</module>
         <module>news-base-util</module>
+        <module>news-base-config</module>
     </modules>
 
 
