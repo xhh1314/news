@@ -2,7 +2,7 @@ package org.example.news.app.common.entity;
 
 import org.example.news.base.common.entity.BaseEntity;
 
-public class AppUserBehavior extends BaseEntity{
+public class AppUserBehavior extends BaseEntity {
 
     private Long userId;
     private Long contentId;

@@ -16,10 +16,8 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- *
  * @author Administrator
  * @date 2017年12月8日
- * @version
  */
 public class TimeTransferUtil {
     /**
@@ -76,6 +74,7 @@ public class TimeTransferUtil {
 
     /**
      * 把date 转换成精确到分钟的时间格式字符串s
+     *
      * @param date
      * @return
      */
@@ -106,6 +105,7 @@ public class TimeTransferUtil {
 
     /**
      * 获取当前时间
+     *
      * @return Timestamp
      */
     public static Timestamp getCurrentTimestamp() {

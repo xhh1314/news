@@ -9,15 +9,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = SnsWebServiceApplication.class,webEnvironment = SpringBootTest.WebEnvironment.MOCK)
+@SpringBootTest(classes = SnsWebServiceApplication.class, webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 public class ForumTest {
 
     @Autowired
     private SnsForumDao snsForumDao;
 
     @Test
-    public void Test1(){
-        SnsForum forum=new SnsForum();
+    public void Test1() {
+        SnsForum forum = new SnsForum();
         forum.setForumId(22222223L);
         forum.setName("新鲜事");
         forum.setDescrible("用户发的状态");

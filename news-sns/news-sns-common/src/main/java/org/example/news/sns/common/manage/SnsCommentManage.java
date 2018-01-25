@@ -6,11 +6,11 @@ import java.util.List;
 
 public class SnsCommentManage {
 
-    public SnsComment getCommentById(Long id){
+    public SnsComment getCommentById(Long id) {
         return null;
     }
 
-    public List<SnsComment> listCommentByParentId(Long id){
+    public List<SnsComment> listCommentByParentId(Long id) {
         return null;
     }
 

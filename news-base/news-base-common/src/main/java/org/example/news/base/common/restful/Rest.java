@@ -39,6 +39,7 @@ public class Rest {
 
     /**
      * 传入数据和消息，
+     *
      * @param data
      * @param message
      * @return
@@ -51,7 +52,7 @@ public class Rest {
         return rest;
     }
 
-    public static Rest success(Map<String,Object> data, String message) {
+    public static Rest success(Map<String, Object> data, String message) {
         Rest rest = new Rest();
         rest.message = message;
         rest.code = 200;
@@ -69,10 +70,11 @@ public class Rest {
 
     /**
      * 直接传一个map作为值,适用于需要传多个值的情况
+     *
      * @param data
      * @return
      */
-    public static Rest success(Map<String,Object> data) {
+    public static Rest success(Map<String, Object> data) {
         Rest rest = new Rest();
         rest.message = "success";
         rest.code = 200;
@@ -106,6 +108,7 @@ public class Rest {
 
     /**
      * 往data里put 键值对，当需要传多个值的时候，可以使用该方法，如果只传一个值，请不要使用该方法！ 可以使用静态方法就行
+     *
      * @param key
      * @param data
      * @return

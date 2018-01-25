@@ -9,7 +9,7 @@ import org.example.news.base.common.entity.BaseEntity;
  * @date 2018/1/22
  * @since
  */
-public class SnsFollow extends BaseEntity{
+public class SnsFollow extends BaseEntity {
 
     private Long userId;
     private Long targetUserId;

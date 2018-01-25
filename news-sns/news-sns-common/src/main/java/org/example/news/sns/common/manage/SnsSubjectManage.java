@@ -4,7 +4,7 @@ import org.example.news.sns.common.entity.SnsSubject;
 
 public class SnsSubjectManage {
 
-    public SnsSubject getSubjectById(Long id){
+    public SnsSubject getSubjectById(Long id) {
         return null;
     }
 

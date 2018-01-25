@@ -14,7 +14,7 @@ import javax.persistence.Id;
  * @since
  */
 @Entity(name = "sns_forum")
-public class SnsForum extends BaseEntity{
+public class SnsForum extends BaseEntity {
 
     private Long forumId;
     private String name;
