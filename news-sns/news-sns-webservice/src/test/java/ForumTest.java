@@ -1,4 +1,5 @@
 import org.example.news.SnsWebServiceApplication;
+import org.example.news.base.module.cas.CasAutoConfig;
 import org.example.news.base.util.time.TimeTransferUtil;
 import org.example.news.sns.common.dao.SnsForumDao;
 import org.example.news.sns.common.entity.SnsForum;
@@ -15,6 +16,8 @@ public class ForumTest {
     @Autowired
     private SnsForumDao snsForumDao;
 
+    @Autowired
+    private CasAutoConfig casAutoConfig;
     @Test
     public void Test1() {
         SnsForum forum = new SnsForum();
@@ -25,6 +28,12 @@ public class ForumTest {
         forum.setStatus(new Short("1"));
         forum.setCreateTime(TimeTransferUtil.getCurrentTimestamp());
         snsForumDao.saveForum(forum);
+    }
+
+    @Test
+    public void test2(){
+
+        System.out.println("测试注入属性是否成功!"+casAutoConfig.getCasServerLoginUrl());
     }
 
 

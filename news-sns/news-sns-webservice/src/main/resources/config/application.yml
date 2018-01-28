@@ -2,6 +2,9 @@ spring:
   profiles:
     active: dev
 ---
+server:
+  port: 8080
+  address: localhost
 #各个key的冒号后边必须跟一个空格
 eureka:
   client:
@@ -14,9 +17,9 @@ spring:
 #数据源信息
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://10.1.11.28:3306/news?useSSL=false&autoReconnect=true
-    username: news
-    password: 1234
+    url: jdbc:mysql://localhost:3306/news?useSSL=false&autoReconnect=true
+    username: root
+    password: root
     driver-class-name: com.mysql.jdbc.Driver
 #配置druid连接池
     druid:
@@ -61,10 +64,12 @@ spring:
 #配置freemarker
   freemarker:
     request-context-attribute : request
+    suffix: .html
   cache:
     type: ehcache
     ehcache:
       config: classpath:ehcache.xml
+
 
 #开发环境配置日志级别
 logging:
@@ -72,7 +77,7 @@ logging:
     root : info
   path : d:/log
 #添加对jsp的支持
-#  mvc:
+# mvc:
 #    view:
 #      prefix : /WEB-INF/views/
 #      suffix : .jsp
@@ -88,8 +93,31 @@ endpoints:
   shutdown:
     enabled : true
     sensitive : false
-server:
-  port: 8763
+#CAS配置
+cas:
+  signOutFilters: /user/logout
+  authFilters: /admin/**
+  validateFilters: /admin/**
+  requestWrapperFilters: /admin/**
+  assertion-filter: /admin/**
+  casServerName: https://sso.lihao.com:8443
+  casServerUrlPrefix: ${cas.casServerName}/cas
+  casServerLoginUrl: ${cas.casServerUrlPrefix}/login
+  casServerLogoutUrl: ${cas.casServerUrlPrefix}/logout
+  redirectAfterValidation: true
+  useSession: true
+  serverName: http://${server.address}:${server.port}
+  localServerUrlPrefix: http://${server.address}:${server.port}
+  casFilterUrlPattern: /shiro-cas
+  casService: ${cas.localServerUrlPrefix}${cas.casFilterUrlPattern}
+  localServerLoginUrl: ${cas.serverName}/login
+#登录的时候，跳转到cas的url http://sso.lihao.com:8443/cas/login?service=http://localhost:8080/admin/index
+  loginUrl: ${cas.casServerLoginUrl}?service=${cas.localServerUrlPrefix}${cas.casFilterUrlPattern}
+#注销，回调的地址
+  logoutUrl: ${cas.casServerLogoutUrl}?service=${cas.casService}
+  loginSuccessUrl: ${cas.serverName}/admin/index
+  loginFailUrl: /error//403
+
 ---
 #各个key的冒号后边必须跟一个空格
 eureka:
@@ -169,3 +197,28 @@ myproperties:
   imageroot: static/image
 #是否启用redis
   isRedis: no
+#CAS配置
+cas:
+  signOutFilters: /user/logout
+  authFilters: /admin/**
+  validateFilters: /admin/**
+  requestWrapperFilters: /admin/**
+  assertion-filter: /admin/**
+  casServerName: https=//sso.lihao.com:8443
+  casServerUrlPrefix: ${cas.casServerName}/cas
+  casServerLoginUrl: ${cas.casServerUrlPrefix}/login
+  casServerLogoutUrl: ${cas.casServerUrlPrefix}/logout
+  redirectAfterValidation: true
+  useSession: true
+  serverName: http://${server.address}:${server.port}
+  localServerUrlPrefix: http://${server.address}:${server.port}
+  casFilterUrlPattern: /shiro-cas
+  casService: ${cas.localServerUrlPrefix}${cas.casFilterUrlPattern}
+  localServerLoginUrl: ${cas.serverName}/login
+#登录的时候，跳转到cas的url http://sso.lihao.com:8443/cas/login?service=http://localhost:8080/admin/index
+  loginUrl: ${cas.casServerLoginUrl}?service=${cas.localServerUrlPrefix}${cas.casFilterUrlPattern}
+#注销，回调的地址
+  logoutUrl: ${cas.casServerLogoutUrl}?service=${cas.casService}
+  loginSuccessUrl: /admin/index
+  loginFailUrl: /user/403
+

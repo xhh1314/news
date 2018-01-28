@@ -51,6 +51,12 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- 使用freemarker这种模板的话，就加载这个 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
