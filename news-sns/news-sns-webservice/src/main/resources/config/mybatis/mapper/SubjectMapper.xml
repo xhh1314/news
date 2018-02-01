@@ -1,0 +1,21 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.example.news.sns.common.dao.impl.mapper.SnsSubjectMapper">
+
+    <resultMap id="subjectResultMap" type="SnsSubject">
+        <id property="subjectId" column="subject_id"></id>
+        <result property="forumId" column="forum_id"></result>
+        <result property="content" column="content"></result>
+        <result property="userId" column="user_id"></result>
+        <result property="numberOfComment" column="number_of_comment"></result>
+        <result property="numOfLike" column="num_of_like"></result>
+    </resultMap>
+    
+    <select id="getSubjectById" resultMap="subjectResultMap" parameterType="Long">
+        select * from sns_subject where subject_id=#{id}
+    </select>
+
+    <insert id="saveSubject" parameterType="SnsSubject" >
+        insert into sns_subject (subject_id, forum_id, content, user_id, number_of_comment, num_of_like) VALUES (#{subjectId},#{forumId},#{content},#{userId},#{numberOfComment},#{numOfLike})
+    </insert>
+
+</mapper>
