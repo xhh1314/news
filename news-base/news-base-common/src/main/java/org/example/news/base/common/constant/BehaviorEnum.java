@@ -13,6 +13,16 @@ package org.example.news.base.common.constant;
  */
 public enum BehaviorEnum {
 
-   likes,interest,uninterest,seen
+    likes(0),
+    interest(1),
+    uninterest(2),
+    seen(3);
+
+
+    private Integer value;
+
+    BehaviorEnum(Integer value) {
+        this.value = value;
+    }
 
 }
