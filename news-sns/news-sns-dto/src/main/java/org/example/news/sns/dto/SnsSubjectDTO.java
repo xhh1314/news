@@ -1,16 +1,7 @@
-package org.example.news.sns.common.entity;
+package org.example.news.sns.dto;
 
-import org.example.news.base.common.entity.BaseEntity;
 
-/**
- * 主题内容，比如发布的新闻，状态等，下边可以有评论
- *
- * @author lh
- * @date 2018/1/22
- * @since
- */
-public class SnsSubject extends BaseEntity {
-
+public class SnsSubjectDTO {
     private Long subjectId;
     private Long forumId;
     private String content;
@@ -62,7 +53,7 @@ public class SnsSubject extends BaseEntity {
         return numOfLike;
     }
 
-    public void setNumOfLike(Integer numOfLike) {
+    public void setNumOfLikes(Integer numOfLike) {
         this.numOfLike = numOfLike;
     }
 
@@ -78,5 +69,4 @@ public class SnsSubject extends BaseEntity {
         sb.append('}');
         return sb.toString();
     }
-
 }

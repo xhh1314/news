@@ -70,7 +70,6 @@ spring:
     ehcache:
       config: classpath:ehcache.xml
 
-
 #开发环境配置日志级别
 logging:
   level:
@@ -117,7 +116,10 @@ cas:
   logoutUrl: ${cas.casServerLogoutUrl}?service=${cas.casService}
   loginSuccessUrl: ${cas.serverName}/admin/index
   loginFailUrl: /error//403
-
+mybatis:
+  config-location: classpath:config/mybatis/mybatis-config.xml
+  mapper-locations: classpath:config/mybatis/mapper/*.xml
+  type-aliases-package: org.example.news.sns.common.entity
 ---
 #各个key的冒号后边必须跟一个空格
 eureka:

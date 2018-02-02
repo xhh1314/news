@@ -3,22 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>news</artifactId>
-        <groupId>org.example.news</groupId>
+        <artifactId>news-sns</artifactId>
+        <groupId>org.example.news.sns</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example.news.sns</groupId>
-    <artifactId>news-sns</artifactId>
-    <packaging>pom</packaging>
-
-    <modules>
-
-        <module>news-sns-common</module>
-        <module>news-sns-webservice</module>
-        <module>news-sns-dto</module>
-    </modules>
+    <artifactId>news-sns-dto</artifactId>
+    <packaging>java</packaging>
 
 
 </project>
