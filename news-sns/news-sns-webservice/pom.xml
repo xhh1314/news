@@ -12,6 +12,7 @@
 
     <artifactId>news-sns-webservice</artifactId>
     <name>news-sns-webservice</name>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
