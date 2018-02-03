@@ -13,7 +13,7 @@ public class AppUserBehavior extends BaseEntity {
      * 2 不感兴趣
      * 3 看过
      */
-    private Short type;
+    private String type;
 
 
 }
