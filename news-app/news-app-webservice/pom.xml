@@ -11,5 +11,28 @@
 
     <artifactId>news-app-webservice</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.example.news.framework</groupId>
+            <artifactId>news-framework-webservice</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.news.base</groupId>
+            <artifactId>news-base-util</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example.news.app</groupId>
+            <artifactId>news-app-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
 
 </project>
